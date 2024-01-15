@@ -8,18 +8,23 @@ import { useState } from 'react';
 
 function App() {
   const [currentWeather, setCurrentWeather] = useState(null);
+  const [forestWeather, setForestWeather] = useState(null);
   const handleOnSearchChange =(searchData) =>{
     const[latitude, longtitude] = searchData.value.split(" ");
     
     const currentWeatherFetch = fetch(`${WEATHER_API_URL}/weather?lat=${latitude}&lon=${longtitude}&appid=${Weather_MY_API}`)
-    Promise.all(currentWeatherFetch)
+    const forestFetch =fetch(`${WEATHER_API_URL}/forecast?lat=${latitude}&lon=${longtitude}&appid=${Weather_MY_API}`)
+    Promise.all([currentWeatherFetch, forestFetch])
     .then(async(response) =>{
-     const weatherResponse = await response[0].jason();
+     const weatherResponse = await response[0].json();
+     const forestResponse = await response[1].json();
      setCurrentWeather({city: searchData.label, ...weatherResponse});
+     setForestWeather({city: searchData.label, ...forestResponse})
     })
     .catch((err) => console.log(err));
   }
 console.log(currentWeather);
+console.log(forestWeather);
 
 
   return (
