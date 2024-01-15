@@ -9,11 +9,21 @@ const Search =({onSearchChange}) =>{
 
 	return  fetch(
        `${GEO_API_URL}/cities?minPopulation=1000000&namePrefix=${inputData}` , geoApiOptions)
-	.then(response => response.json()) 
-	.then(response=>console.log(response))
+	.then((response) => response.json()) 
+	.then((response)=>{
+        return{
+            options: response.data.map((city) =>{
+               return{
+                value: `${city.latitude} ${city.longitude}`,
+                label: `${city.name}, ${city.countryCode}`,
+               
+               } 
+            })
+        }
+    })
     .catch((err) => console.log(err));
 
-    }
+    };
     const handleOnChange = (searchData) =>{
         setSearch(searchData);
         onSearchChange(searchData);
