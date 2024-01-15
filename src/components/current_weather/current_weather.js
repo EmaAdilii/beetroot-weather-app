@@ -8,7 +8,7 @@ const CurrentWeather = ({ data }) => {
           <h1>Current Weather</h1>
         </div>
         <div className="weather_box_content">
-          <img alt="sunny" src={`${data.weather[0].icon}.png`}/>
+          <img alt="sunny" src={`./icons/${data.weather[0].icon}.png`}/>
           <p className="weather_box_content_temperature">{` ${Math.round(data.main.temp)}°C`}</p>
           <p className="weather_box_content_temperature_description">{data.weather[0].description}</p>
           <p className="weather_box_content_city">
