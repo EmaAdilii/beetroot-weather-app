@@ -12,8 +12,8 @@ function App() {
   const handleOnSearchChange =(searchData) =>{
     const[latitude, longtitude] = searchData.value.split(" ");
     
-    const currentWeatherFetch = fetch(`${WEATHER_API_URL}/weather?lat=${latitude}&lon=${longtitude}&appid=${Weather_MY_API}`)
-    const forestFetch =fetch(`${WEATHER_API_URL}/forecast?lat=${latitude}&lon=${longtitude}&appid=${Weather_MY_API}`)
+    const currentWeatherFetch = fetch(`${WEATHER_API_URL}/weather?lat=${latitude}&lon=${longtitude}&appid=${Weather_MY_API}&units=metric`)
+    const forestFetch =fetch(`${WEATHER_API_URL}/forecast?lat=${latitude}&lon=${longtitude}&appid=${Weather_MY_API}&units=metric`)
     Promise.all([currentWeatherFetch, forestFetch])
     .then(async(response) =>{
      const weatherResponse = await response[0].json();
@@ -31,7 +31,7 @@ console.log(forestWeather);
     <div className="container">
      <div className="container_box">
         <Search onSearchChange={handleOnSearchChange}/>
-        <CurrentWeather/>
+        {currentWeather && <CurrentWeather data={currentWeather}/>}
      </div>
     </div>
   );
