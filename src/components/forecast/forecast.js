@@ -17,7 +17,6 @@ const weekDays = [
   "Saturday",
   "Sunday",
 ];
-// ... (previous code)
 
 const Forecast = ({ data }) => {
   const dayInAWeek = new Date().getDay();
