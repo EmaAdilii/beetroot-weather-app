@@ -1,0 +1,97 @@
+.forecast_container {
+  margin-top: 120px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  color: #04364a;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.forecast_container_boxes {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.daily-item {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  width: 120px;
+  transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+}
+
+.daily-item:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: scale(1.05);
+}
+
+.icon-small {
+  margin-bottom: 10px;
+  align-self: center;
+}
+
+.day {
+  color: #164863;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.min-max {
+  color: #176b87;
+  font-size: 15px;
+  text-align: center;
+}
+
+.description {
+  color: #567189;
+  text-align: center;
+  font-size: 13px;
+  margin-top: 3px;
+}
+
+.daily-details {
+  grid-row-gap: 0;
+  grid-column-gap: 15px;
+  -webkit-column-gap: 15px;
+  column-gap: 15px;
+  display: grid;
+  flex: 1 1;
+  grid-template-columns: auto auto;
+  padding: 5px 15px;
+  row-gap: 0;
+}
+
+.daily-details-grid-item {
+  align-items: center;
+  display: flex;
+  height: 30px;
+  justify-content: space-between;
+}
+
+.hour {
+  margin-right: 10px;
+}
+
+.hour,
+.temperature {
+  color: #567189;
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
