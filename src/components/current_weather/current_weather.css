@@ -1,13 +1,13 @@
 
      .custom-box {
-        width: 40%;
+      width: 40%;
       border-radius: 10px;
-      background: rgb(73, 121, 9);
-      background: linear-gradient(0deg, rgba(73, 121, 9, 1) 25%, rgba(3, 118, 141, 1) 100%);
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       padding: 20px;
       margin-top: 30px;
-      color: white;
-    }
+     }
 
     .custom-box img {
       width: 80px;
@@ -43,4 +43,18 @@
       }
       .temperature{
         font-size: 18px;
+        font-weight:600;
+      }
+      h1{
+        color: #164863;
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      p{
+        color: #164863;
+      }
+      div i ,span{
+        color: #164863;
       }
